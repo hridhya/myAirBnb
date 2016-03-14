@@ -21,6 +21,19 @@ authenticated.route("/", {
   }
 });
 
+authenticated.route("/parking", {
+  name: 'parking',
+  subscriptions: function() {
+    //var selector = {category: {$ne: "private"}};
+    this.register('userData', Meteor.subscribe('userData'));
+  },
+  action: function() {
+    ReactLayout.render(Main, {
+      content: <Parking />
+    });
+  }
+});
+
 insecure.route("/signin", {
   name: 'signin',
   subscriptions: function() {},
@@ -37,43 +50,6 @@ insecure.route("/signup", {
   action: function() {
     ReactLayout.render(Main, {
       content: <Signup />
-    });
-  }
-});
-
-insecure.route("/recover-password", {
-  name: 'recover-password',
-  subscriptions: function() {},
-  action: function() {
-    ReactLayout.render(Main, {
-      content: <RecoverPassword />
-    });
-  }
-});
-
-insecure.route("/reset-password/:token", {
-  name: 'reset-password',
-  subscriptions: function() {},
-  action: function() {
-    ReactLayout.render(Main, {
-      content: <ResetPassword />
-    });
-  }
-});
-
-insecure.route("/verify-email/:token", {
-  name: 'verify-email',
-  subscriptions: function() {},
-  action: function() {
-    var token = FlowRouter.getParam("token");
-    Accounts.verifyEmail(token, function (error) {
-      if (error) {
-        Materialize.toast('Something has gone wrong', 4000);
-      }
-      else{
-        Materialize.toast('Thank you for verifying your account!', 4000);
-        FlowRouter.go('/');
-      }
     });
   }
 });

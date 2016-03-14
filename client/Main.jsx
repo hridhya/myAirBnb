@@ -24,12 +24,12 @@ Main = React.createClass({
               </a>
               <a href="" data-activates="mobile-demo" className="button-collapse"><i className="mdi-navigation-menu"></i></a>
               <ul className="right hide-on-med-and-down">
-                {this.data.currentUser ? <li><a href="/services">Services</a></li>: ""}
-                <li><a href={this.data.currentUser ? "" : "/signin"} onClick={this.data.currentUser ? this.signOut : ""}>{this.data.currentUser ? "Sign Out" : "Sign In" }</a></li>
+                {this.data.currentUser ? <li><a href="/parking">ADD PARKING SPOT</a></li>: ""}
+                <li><a href={this.data.currentUser ? "" : "/signin"} onClick={this.data.currentUser ? this.signOut : ""}>{this.data.currentUser ? "SIGN OUT" : "Sign In" }</a></li>
               </ul>
               <ul className="side-nav" id="mobile-demo">
                 {this.data.currentUser ? <li><a href="/services">Services</a></li>: ""}
-                <li><a href={this.data.currentUser ? "" : "/signin"} onClick={this.data.currentUser ? this.signOut : ""}>{this.data.currentUser ? "Sign Out" : "Sign In" }</a></li>
+                <li><a href={this.data.currentUser ? "" : "/signin"} onClick={this.data.currentUser ? this.signOut : ""}>{this.data.currentUser ? "SIGN OUT" : "Sign In" }</a></li>
               </ul>
             </div>
           </nav>
