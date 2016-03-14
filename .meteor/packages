@@ -23,3 +23,5 @@ materialize:materialize
 fortawesome:fontawesome
 kadira:react-layout
 kadira:flow-router
+accounts-ui
+accounts-password
