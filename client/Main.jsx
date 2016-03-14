@@ -4,8 +4,6 @@ Meteor.startup(function(){
 
 Main = React.createClass({
 
-  mixins: [ReactMeteorData],
-
   render(){
     return (
       <div className="page-content">
