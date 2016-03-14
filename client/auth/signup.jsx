@@ -69,7 +69,6 @@ Signup = React.createClass({
     var lname = ReactDOM.findDOMNode(this.refs.lname).value.trim();
     var email = ReactDOM.findDOMNode(this.refs.email).value.trim();
     var password = ReactDOM.findDOMNode(this.refs.password).value.trim();
-    //var cpassword = ReactDOM.findDOMNode(this.refs.cpassword).value.trim();
 
     Accounts.createUser({
       email: email,
